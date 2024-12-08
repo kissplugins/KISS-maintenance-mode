@@ -1,6 +1,6 @@
 KISS = Keep It Simple (Stupid) Plugins are designed to do one thing only. And that one thing should be done very well.
 
-This maintenance plugin does not have any upsell or freemium features. 
+This maintenance plugin does not have any upsell or freemium features. You get it all.
 
 **You get the folowing:**
 1. On/Off Switch
