@@ -26,6 +26,6 @@ Please first review the code and test on a Development/Staging server.
 
 Read the License file for more information in this Repo.
 
-
-
+Follow Us on Blue Sky:
+https://bsky.app/profile/kissplugins.bsky.social
 
