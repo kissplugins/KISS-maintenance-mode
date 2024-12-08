@@ -11,6 +11,7 @@ This maintenance plugin does not have any upsell or freemium features.
 There are no timers. You manually turn this on or off yourself.
 
 **Road Map**
+
 Add Social Media Icons and links. 
 
 After that we will probably stop with adding new features and focus on bug fixes for a long time.
