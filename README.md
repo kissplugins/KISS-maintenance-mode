@@ -7,6 +7,7 @@ This maintenance plugin does not have any upsell or freemium features.
 2. Logo Upload
 3. Headline Text
 4. Contact Text
+5. Page Background Color
 
 There are no timers. You manually turn this on or off yourself.
 
