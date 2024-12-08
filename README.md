@@ -15,7 +15,8 @@ Add Social Media Icons and links.
 
 After that we will probably stop with adding new features and focus on bug fixes for a long time.
 
-Questions - Contact Us: devops@kissplugins.com
+**Questions & Customization Requests**
+Contact Us: devops@kissplugins.com | noel@hypercart.io
 
 **This plugin is released under GPL v2**
 Use of the plugin is at your own risk and provided as-is **without** any warranties.
