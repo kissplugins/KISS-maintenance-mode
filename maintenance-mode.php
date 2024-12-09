@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: KISS - Maintenance Mode
+Plugin Name: Maintenance Mode Splash
 Description: Puts the site into maintenance mode and displays a custom splash page for non-logged-in visitors.
-Version: 1.4
-Author: Hypercart DBA Neochrome
+Version: 1.6
+Author: Your Name
 License: GPL2
 */
 
@@ -109,7 +109,7 @@ class Maintenance_Mode_Splash {
         // Headline font size
         add_settings_field(
             'headline_font_size',
-            'Headline Font Size (default: 100px)',
+            'Headline Font Size (default: 100px - numbers only, px will be added automatically)',
             array( $this, 'field_headline_font_size' ),
             $this->option_name,
             'mms_section'
@@ -145,7 +145,7 @@ class Maintenance_Mode_Splash {
         // Contact font size
         add_settings_field(
             'contact_font_size',
-            'Contact Font Size (default: 16px)',
+            'Contact Font Size (default: 16px - numbers only, px will be added automatically)',
             array( $this, 'field_contact_font_size' ),
             $this->option_name,
             'mms_section'
@@ -180,29 +180,32 @@ class Maintenance_Mode_Splash {
     }
 
     public function sanitize_settings( $input ) {
-        $old_options = get_option( $this->option_name );
-
-        $input['enabled'] = isset( $input['enabled'] ) ? (bool) $input['enabled'] : false;
-        $input['splash_image'] = esc_url_raw( $input['splash_image'] );
-        $input['headline_text'] = sanitize_text_field( $input['headline_text'] );
-        $input['headline_font_size'] = sanitize_text_field( $input['headline_font_size'] );
-        $input['headline_font'] = sanitize_text_field( $input['headline_font'] );
-        $input['headline_alignment'] = sanitize_text_field( $input['headline_alignment'] );
-        $input['contact_text'] = wp_kses_post( $input['contact_text'] );
-        $input['contact_font_size'] = sanitize_text_field( $input['contact_font_size'] );
-        $input['contact_font'] = sanitize_text_field( $input['contact_font'] );
-        $input['contact_alignment'] = sanitize_text_field( $input['contact_alignment'] );
-        $input['background_color'] = preg_match('/^#[a-fA-F0-9]{6}$/', $input['background_color']) ? $input['background_color'] : '#ffffff';
-
-        // Check if something changed to avoid duplicates
         if ( isset($_POST[$this->option_name]) ) {
             add_settings_error(
-                $this->option_name, // slug
-                'mms_custom_updated', // unique code to prevent duplication
+                $this->option_name,
+                'mms_custom_updated',
                 'Settings saved. If you have enabled Maintenance Mode below, please open an Incognito or Private Web Browser window to review your Splash page. You may need to clear both your server and/or browser caches several times to see it.',
                 'updated'
             );
         }
+
+        $input['enabled'] = isset( $input['enabled'] ) ? (bool) $input['enabled'] : false;
+        $input['splash_image'] = esc_url_raw( $input['splash_image'] );
+        $input['headline_text'] = sanitize_text_field( $input['headline_text'] );
+        
+        $headline_size = preg_replace('/\D/', '', $input['headline_font_size']);
+        $input['headline_font_size'] = $headline_size !== '' ? $headline_size : '100';
+
+        $input['headline_font'] = sanitize_text_field( $input['headline_font'] );
+        $input['headline_alignment'] = sanitize_text_field( $input['headline_alignment'] );
+        $input['contact_text'] = wp_kses_post( $input['contact_text'] );
+
+        $contact_size = preg_replace('/\D/', '', $input['contact_font_size']);
+        $input['contact_font_size'] = $contact_size !== '' ? $contact_size : '16';
+
+        $input['contact_font'] = sanitize_text_field( $input['contact_font'] );
+        $input['contact_alignment'] = sanitize_text_field( $input['contact_alignment'] );
+        $input['background_color'] = preg_match('/^#[a-fA-F0-9]{6}$/', $input['background_color']) ? $input['background_color'] : '#ffffff';
 
         return $input;
     }
@@ -249,8 +252,8 @@ class Maintenance_Mode_Splash {
         $options = get_option( $this->option_name );
         $image = ! empty( $options['splash_image'] ) ? $options['splash_image'] : '';
         ?>
-        <input type="text" name="<?php echo esc_attr($this->option_name); ?>[splash_image]" id="splash_image" value="<?php echo esc_attr($image); ?>" style="width:60%;" />
-        <button type="button" class="button" id="upload_image_button">Upload Image</button>
+        <input type="text" name="<?php echo esc_attr($this->option_name); ?>[splash_image]" id="splash_image" value="<?php echo esc_attr($image); ?>" style="width:60%;" readonly="readonly"/>
+        <button type="button" class="button" id="upload_image_button">Select or Upload Image</button>
         <?php
     }
 
@@ -264,7 +267,7 @@ class Maintenance_Mode_Splash {
 
     public function field_headline_font_size() {
         $options = get_option( $this->option_name );
-        $value = ! empty( $options['headline_font_size'] ) ? $options['headline_font_size'] : '100px';
+        $value = ! empty( $options['headline_font_size'] ) ? $options['headline_font_size'] : '100';
         ?>
         <input type="text" name="<?php echo esc_attr($this->option_name); ?>[headline_font_size]" value="<?php echo esc_attr($value); ?>" style="width:60%;" />
         <?php
@@ -306,7 +309,7 @@ class Maintenance_Mode_Splash {
 
     public function field_contact_font_size() {
         $options = get_option( $this->option_name );
-        $value = ! empty( $options['contact_font_size'] ) ? $options['contact_font_size'] : '16px';
+        $value = ! empty( $options['contact_font_size'] ) ? $options['contact_font_size'] : '16';
         ?>
         <input type="text" name="<?php echo esc_attr($this->option_name); ?>[contact_font_size]" value="<?php echo esc_attr($value); ?>" style="width:60%;" />
         <?php
@@ -369,21 +372,12 @@ class Maintenance_Mode_Splash {
         return $fonts;
     }
 
-    // Helper to determine best contrast color (black or white) based on background color
     private function get_contrast_color( $hexcolor ) {
-        // Remove '#' if present
         $hexcolor = ltrim($hexcolor, '#');
-
-        // Convert to RGB
         $r = hexdec(substr($hexcolor, 0, 2));
         $g = hexdec(substr($hexcolor, 2, 2));
         $b = hexdec(substr($hexcolor, 4, 2));
-
-        // Calculate brightness
-        // Formula: https://www.w3.org/TR/AERT/#color-contrast
         $brightness = ( ( $r * 299 ) + ( $g * 587 ) + ( $b * 114 ) ) / 1000;
-
-        // Return black for light backgrounds, white for dark
         return ($brightness > 155) ? '#000000' : '#ffffff';
     }
 
@@ -403,7 +397,6 @@ class Maintenance_Mode_Splash {
             }
         }
 
-        // If here, maintenance mode ON and visitor not allowed
         $this->render_splash();
         exit;
     }
@@ -413,18 +406,17 @@ class Maintenance_Mode_Splash {
 
         $image = ! empty( $options['splash_image'] ) ? $options['splash_image'] : '';
         $headline_text = ! empty( $options['headline_text'] ) ? $options['headline_text'] : 'Under Construction';
-        $headline_font_size = ! empty( $options['headline_font_size'] ) ? $options['headline_font_size'] : '100px';
+        $headline_font_size = ! empty( $options['headline_font_size'] ) ? $options['headline_font_size'] : '100';
         $headline_font = ! empty( $options['headline_font'] ) ? $options['headline_font'] : 'Arial';
         $headline_alignment = ! empty( $options['headline_alignment'] ) ? $options['headline_alignment'] : 'center';
 
         $contact_text = ! empty( $options['contact_text'] ) ? $options['contact_text'] : 'Email us at <a href="mailto:info@company.com">info@company.com</a>';
-        $contact_font_size = ! empty( $options['contact_font_size'] ) ? $options['contact_font_size'] : '16px';
+        $contact_font_size = ! empty( $options['contact_font_size'] ) ? $options['contact_font_size'] : '16';
         $contact_font = ! empty( $options['contact_font'] ) ? $options['contact_font'] : 'Arial';
         $contact_alignment = ! empty( $options['contact_alignment'] ) ? $options['contact_alignment'] : 'center';
 
         $background_color = ! empty( $options['background_color'] ) ? $options['background_color'] : '#ffffff';
 
-        // Determine text color based on background color
         $text_color = $this->get_contrast_color($background_color);
 
         ?>
@@ -462,7 +454,7 @@ class Maintenance_Mode_Splash {
                     display:block;
                 }
                 .mms-headline {
-                    font-size: <?php echo esc_html($headline_font_size); ?>;
+                    font-size: <?php echo esc_html($headline_font_size); ?>px;
                     text-align: <?php echo esc_html($headline_alignment); ?>;
                     font-family: <?php echo esc_html($headline_font); ?>, sans-serif;
                     margin-bottom:20px;
@@ -470,7 +462,7 @@ class Maintenance_Mode_Splash {
                     color: <?php echo esc_attr($text_color); ?>;
                 }
                 .mms-contact {
-                    font-size: <?php echo esc_html($contact_font_size); ?>;
+                    font-size: <?php echo esc_html($contact_font_size); ?>px;
                     text-align: <?php echo esc_html($contact_alignment); ?>;
                     font-family: <?php echo esc_html($contact_font); ?>, sans-serif;
                     word-wrap: break-word;
