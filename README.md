@@ -9,7 +9,7 @@ The **KISS Maintenance** plugin (BETA) does not have any upsell or freemium feat
 4. Contact Text
 5. Page Background Color
 
-There are no timers. You manually turn this on or off yourself.
+There are no timers. You manually turn the Maintenance Mode splash screen to on **or** off yourself.
 
 **Road Map**
 
