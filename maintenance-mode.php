@@ -3,7 +3,7 @@
 Plugin Name: KISS - Maintenance Mode
 Description: Puts the site into maintenance mode and displays a custom splash page for non-logged-in visitors.
 Version: 1.4
-Author: Hypercart DBA Neochrome
+Author: Hypercart
 License: GPL2
 */
 
