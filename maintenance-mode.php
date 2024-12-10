@@ -26,7 +26,14 @@ class Maintenance_Mode_Splash {
 
         // Enqueue scripts for admin (including color picker and media uploader)
         add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
+        add_filter('plugin_action_links_' . plugin_basename(__FILE__), array( $this, 'plugin_settings_link'));
     }
+    
+    public function plugin_settings_link($links) {
+        $settings_link = '<a href="options-general.php?page=maintenance-mode-splash">' . __('Settings', 'kiss-maintenance-mode') . '</a>';
+        $links['settings'] = $settings_link; // Add the settings link at the end
+        return $links;
+    }    
 
     public function admin_scripts( $hook ) {
         if ( 'settings_page_maintenance-mode-splash' === $hook ) {
