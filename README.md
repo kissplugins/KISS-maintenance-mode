@@ -5,14 +5,16 @@ The **KISS Maintenance** plugin (BETA) does not have any upsell or freemium feat
 **You get the folowing:**
 1. On/Off Switch
 2. Logo Upload
-3. Headline Text
-4. Contact Text
+3. Headline Text* 
+4. Contact Text*
 5. Page Background Color
+
+*Color automatically changes with contrast detection feature built-in
 
 There are no timers. You manually turn the Maintenance Mode splash screen to on **or** off yourself.
 
 **Road Map**
-
+A few more extra fonts
 Add Social Media Icons and links. 
 
 After that we will probably stop with adding new features and focus on bug fixes for a long time.
