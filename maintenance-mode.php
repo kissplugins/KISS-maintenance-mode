@@ -224,7 +224,7 @@ class Maintenance_Mode_Splash {
         ?>
         <div class="wrap">
             <h1>Maintenance Mode Splash Settings</h1>
-            <?php settings_errors( $this->option_name ); ?>
+            <?php //settings_errors( $this->option_name ); ?>
             <form method="post" action="options.php">
                 <?php
                 settings_fields( $this->option_name );
