@@ -89,8 +89,8 @@ To disable maintenance mode and restore normal site visibility to all visitors, 
 ---
 
 **Road Map**
-A few more extra fonts
-Add Social Media Icons and links. 
+- A few more extra fonts
+- Add Social Media Icons and links. 
 
 After that we will probably stop with adding new features and focus on bug fixes for a long time.
 
