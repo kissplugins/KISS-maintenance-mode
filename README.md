@@ -16,7 +16,7 @@ There are no timers. You manually turn the Maintenance Mode splash screen to on 
 ---
 
 
-**Maintenance Mode Splash Plugin User Instructions**
+##**Maintenance Mode Splash Plugin User Instructions**
 
 **Installation**
 
