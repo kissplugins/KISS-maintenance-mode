@@ -86,6 +86,7 @@ To test your splash page, open your website in a browser where you’re not logg
 
 To disable maintenance mode and restore normal site visibility to all visitors, simply uncheck the **Enable Maintenance Mode** box and click **Save Changes**.
 
+---
 
 **Road Map**
 A few more extra fonts
@@ -93,8 +94,13 @@ Add Social Media Icons and links.
 
 After that we will probably stop with adding new features and focus on bug fixes for a long time.
 
+---
+
+
 **Questions & Customization Requests**
 Contact Us: devops@kissplugins.com | noel@kissplugins.com
+
+---
 
 **This plugin is released under GPL v2**
 This software is considered BETA and still being tested and refined. Use at our own risk.
@@ -103,6 +109,8 @@ Use of the plugin is at your own risk and provided as-is **without** any warrant
 Please first review the code and test on a Development/Staging server.
 
 Read the License file for more information in this Repo.
+
+---
 
 **Follow Us on Blue Sky:**
 https://bsky.app/profile/kissplugins.bsky.social
