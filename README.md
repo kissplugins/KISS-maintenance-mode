@@ -13,6 +13,9 @@ The **KISS Maintenance** plugin (BETA) does not have any upsell or freemium feat
 
 There are no timers. You manually turn the Maintenance Mode splash screen to on **or** off yourself.
 
+---
+
+
 **Maintenance Mode Splash Plugin User Instructions**
 
 **Installation**
