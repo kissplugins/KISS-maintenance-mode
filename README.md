@@ -13,9 +13,9 @@ The **KISS Maintenance** plugin (BETA) does not have any upsell or freemium feat
 
 There are no timers. You manually turn the Maintenance Mode splash screen to on **or** off yourself.
 
-**# Maintenance Mode Splash Plugin User Instructions**
+**Maintenance Mode Splash Plugin User Instructions**
 
-**## Installation**
+**Installation**
 
 1. **Download and Install**: Download the plugin’s zip file from your given source.  
 2. **Upload to WordPress**: In your WordPress Admin, navigate to **Plugins > Add New** and then **Upload Plugin**. Select the zip file and click **Install Now**.  
@@ -23,11 +23,11 @@ There are no timers. You manually turn the Maintenance Mode splash screen to on 
 
 ---
 
-**## Configuration**
+**Configuration**
 
 Once activated, go to **Settings > Maintenance Mode Splash** to configure the plugin.
 
-**### Available Settings**
+**Available Settings**
 
 - **Enable Maintenance Mode**:  
   Check this box to activate the splash page for non-logged-in users.
@@ -62,13 +62,13 @@ Once activated, go to **Settings > Maintenance Mode Splash** to configure the pl
 - **Background Color**:  
   Use the color picker or enter a valid hex code (e.g., **#ffffff**) for the splash page background color.
 
-**### Saving Settings**
+**Saving Settings**
 
 After making changes, click the **Save Changes** button at the bottom of the page. A confirmation message will appear indicating the settings are saved. If Maintenance Mode is enabled, you’ll be advised to use an incognito/private window and possibly clear caches to view the splash page as a visitor would.
 
 ---
 
-**## Viewing the Splash Page**
+**Viewing the Splash Page**
 
 - **For Logged-In Users with Allowed Roles (Administrator, Editor, Author, Shop Manager)**:  
   The site will appear normally with the active theme’s pages visible.  
@@ -79,7 +79,7 @@ To test your splash page, open your website in a browser where you’re not logg
 
 ---
 
-**## Disabling Maintenance Mode**
+**Disabling Maintenance Mode**
 
 To disable maintenance mode and restore normal site visibility to all visitors, simply uncheck the **Enable Maintenance Mode** box and click **Save Changes**.
 
