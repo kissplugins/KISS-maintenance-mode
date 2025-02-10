@@ -2,14 +2,26 @@
 /*
 Plugin Name: KISS - Maintenance Mode
 Description: Puts the site into maintenance mode and displays a custom splash page for non-logged-in visitors.
-Version: 1.4
+Version: 1.5
 Author: Hypercart
 License: GPL2
+Text Domain: kiss-maintenance-mode
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
+
+// Include the Plugin Update Checker
+require plugin_dir_path(__FILE__) . 'lib/plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/kissplugins/KISS-maintenance-mode',
+    __FILE__,
+    'kiss-maintenance-mode'
+);
+// Optional: Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
 
 class Maintenance_Mode_Splash {
     private $option_name = 'maintenance_mode_splash_settings';
