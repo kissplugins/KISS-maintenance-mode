@@ -1,119 +1,133 @@
-**KISS = Keep It Simple (Stupid)** Plugins are designed to do one thing only. And we believe that one thing should be done very well.
+# KISS Maintenance Mode Splash (BETA)
 
-The **KISS Maintenance** plugin (BETA) does not have any upsell or freemium features. You get it all.
+> **KISS = Keep It Simple (Stupid)**  
+> Our plugins are designed to do just one thing—and do it very well.
 
-**You get the folowing:**
-1. On/Off Switch
-2. Logo Upload
-3. Headline Text* 
-4. Contact Text*
-5. Page Background Color
-
-*Color automatically changes with contrast detection feature built-in
-
-There are no timers. You manually turn the Maintenance Mode splash screen to on **or** off yourself.
+The **KISS Maintenance Mode Splash** plugin provides a clean, user-controlled splash page without upsells, freemium blocks, or unnecessary bloat. What you see is what you get.
 
 ---
 
+## ✨ Features
 
-
-**Maintenance Mode Splash Plugin User Instructions**
-
-**Installation**
-
-1. **Download and Install**: Download the plugin’s zip file from your given source.  
-2. **Upload to WordPress**: In your WordPress Admin, navigate to **Plugins > Add New** and then **Upload Plugin**. Select the zip file and click **Install Now**.  
-3. **Activate**: After installation, click **Activate Plugin**.
-
----
-
-**Configuration**
-
-Once activated, go to **Settings > Maintenance Mode Splash** to configure the plugin.
-
-**Available Settings**
-
-- **Enable Maintenance Mode**:  
-  Check this box to activate the splash page for non-logged-in users.
-
-- **Splash Image**:  
-  Click **Select or Upload Image** to open the WP media library and select a 500x500 (recommended) image. The field is read-only to ensure you use the media library.
-
-- **Headline Text**:  
-  Enter your custom headline. Defaults to **Under Construction** if blank.
-
-- **Headline Font Size**:  
-  Enter a numeric value only (e.g., **100** for 100px). The "px" is automatically added. If left empty, it defaults to **100px**.
-
-- **Headline Font Family**:  
-  Choose from the dropdown of available theme fonts.
-
-- **Headline Alignment**:  
-  Select **Left**, **Center**, or **Right**.
-
-- **Contact Text**:  
-  Add contact information or HTML (e.g., **Email us at `<a href="mailto:info@company.com">info@company.com</a>`**).
-
-- **Contact Font Size**:  
-  Enter a numeric value (e.g., **16** for 16px). The "px" is automatically added. Defaults to **16px** if empty.
-
-- **Contact Font Family**:  
-  Choose from your theme’s available fonts.
-
-- **Contact Alignment**:  
-  Select **Left**, **Center**, or **Right**.
-
-- **Background Color**:  
-  Use the color picker or enter a valid hex code (e.g., **#ffffff**) for the splash page background color.
-
-**Saving Settings**
-
-After making changes, click the **Save Changes** button at the bottom of the page. A confirmation message will appear indicating the settings are saved. If Maintenance Mode is enabled, you’ll be advised to use an incognito/private window and possibly clear caches to view the splash page as a visitor would.
+- Simple On/Off switch
+- Custom logo/image upload
+- Headline and contact text (with contrast-aware colors)
+- Configurable fonts, sizes, and alignment
+- Background color picker
+- No timers or countdowns
+- No locked features — everything included
 
 ---
 
-**Viewing the Splash Page**
+## 🛠️ Installation
 
-- **For Logged-In Users with Allowed Roles (Administrator, Editor, Author, Shop Manager)**:  
-  The site will appear normally with the active theme’s pages visible.  
-- **For Visitors and Other Users**:  
-  The splash page will be displayed if Maintenance Mode is enabled.
-
-To test your splash page, open your website in a browser where you’re not logged in or use an **Incognito/Private mode** window. You may need to clear your browser or server cache if you do not see the changes immediately.
+1. **Download** the plugin ZIP from [git repository](https://github.com/kissplugins/KISS-maintenance-mode).
+2. In your WordPress Admin, go to **Plugins > Add New > Upload Plugin**.
+3. Choose the ZIP file and click **Install Now**.
+4. After installation, click **Activate Plugin**.
 
 ---
 
-**Disabling Maintenance Mode**
+## ⚙️ Configuration
 
-To disable maintenance mode and restore normal site visibility to all visitors, simply uncheck the **Enable Maintenance Mode** box and click **Save Changes**.
+After activation, navigate to:
+
+**Settings > Maintenance Mode Splash**
+
+### Available Settings
+
+- **Enable Maintenance Mode**  
+  Toggle to show or hide the splash page for non-logged-in users.
+
+- **Splash Image**  
+  Upload or select an image (recommended size: **500x500px**). The field is read-only to enforce using the media library.
+
+- **Headline Text**  
+  Enter custom text (default: **Under Construction**).
+
+- **Headline Font Size**  
+  Numeric only (e.g., `100` for 100px). Defaults to **100px**.
+
+- **Headline Font Family**  
+  Choose from the available theme fonts.
+
+- **Headline Alignment**  
+  Options: **Left**, **Center**, or **Right**.
+
+- **Contact Text**  
+  Supports HTML. Example:  
+  `Email us at <a href="mailto:info@company.com">info@company.com</a>`
+
+- **Contact Font Size**  
+  Numeric only (e.g., `16` for 16px). Defaults to **16px**.
+
+- **Contact Font Family**  
+  Choose from your theme's available fonts.
+
+- **Contact Alignment**  
+  Options: **Left**, **Center**, or **Right**.
+
+- **Background Color**  
+  Use the color picker or enter a hex code (e.g., `#ffffff`).
+
+### Saving Settings
+
+Click **Save Changes** after editing settings. If Maintenance Mode is enabled, test the splash screen in a private/incognito window and clear browser/server cache if needed.
 
 ---
 
-**Road Map**
-- A few more extra fonts
-- Add Social Media Icons and links. 
+## 👁️ Viewing the Splash Page
 
-After that we will probably stop with adding new features and focus on bug fixes for a long time.
+- **Logged-In Users** (roles: Administrator, Editor, Author, Shop Manager):  
+  The full site remains visible.
 
----
+- **Other Users / Visitors**:  
+  The splash page appears if Maintenance Mode is enabled.
 
-
-**Questions & Customization Requests**
-Contact Us: devops@kissplugins.com | noel@kissplugins.com
+To test, use an **Incognito/Private** browser window while logged out.
 
 ---
 
-**This plugin is released under GPL v2**
-This software is considered BETA and still being tested and refined. Use at our own risk.
+## 🚫 Disabling Maintenance Mode
 
-Use of the plugin is at your own risk and provided as-is **without** any warranties.
-Please first review the code and test on a Development/Staging server.
-
-Read the License file for more information in this Repo.
+To disable:  
+Uncheck **Enable Maintenance Mode** and click **Save Changes**.
 
 ---
 
-**Follow Us on Blue Sky:**
-https://bsky.app/profile/kissplugins.bsky.social
+## 🛣️ Roadmap
 
-© Copyright Hypercart D.B.A. Neochrome, Inc.
+Planned additions:
+- More font options
+- Social media icons + links
+
+Once complete, we'll focus on stability and bug fixes.
+
+---
+
+## 📬 Contact / Support
+
+For questions or customization requests:  
+📧 devops@kissplugins.com  
+📧 noel@kissplugins.com
+
+---
+
+## 🧾 License
+
+This plugin is released under the **GPL v2 License**.  
+The software is in **BETA**, provided **as-is** without warranties.
+
+Please test thoroughly on staging/development environments before using in production.
+
+See the `LICENSE` file in this repository for more details.
+
+---
+
+## 🔗 Follow Us
+
+**BlueSky**: [https://bsky.app/profile/kissplugins.bsky.social](https://bsky.app/profile/kissplugins.bsky.social)
+
+---
+
+© Hypercart D.B.A. Neochrome, Inc.
